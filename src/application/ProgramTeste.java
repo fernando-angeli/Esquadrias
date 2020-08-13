@@ -19,6 +19,8 @@ public class ProgramTeste {
 		boolean soleiraTeste = false;
 		boolean guarnicaoTeste = false;
 		
+		System.out.print("Quantidade: ");
+		int quantidade = sc.nextInt();
 		System.out.print("Largura (cm): ");
 		double largura = sc.nextDouble();
 		System.out.print("Altura (cm): ");
@@ -57,10 +59,15 @@ public class ProgramTeste {
 			guarnicaoTeste = true;
 		}
 
-		Correr2F e1 = new Correr2F(largura, altura, marco, soleiraTeste, guarnicaoTeste, telaTeste, ativa);
+		Correr2F e1 = new Correr2F(quantidade, largura, altura, marco, soleiraTeste, guarnicaoTeste, telaTeste, ativa);
 		
 		System.out.println();
-		System.out.print(e1.correr2F());		
+		if(!telaTeste) {
+			System.out.print(e1.correr2F());
+		}
+		else {
+			System.out.print(e1.correr2FcomTela());
+		}	
 		sc.close();
 	}
 }

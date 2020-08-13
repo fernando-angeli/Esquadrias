@@ -2,6 +2,7 @@ package entities;
 
 public class EsquadriaCorrer {
 	
+	protected int quantidade;
 	protected double largura;
 	protected double altura;
 	protected double marco;
@@ -12,7 +13,8 @@ public class EsquadriaCorrer {
 	public EsquadriaCorrer() {
 	}
 
-	public EsquadriaCorrer(double largura, double altura, double marco, boolean soleiraEmbutida, boolean guarnicaoExterna, boolean tela) {
+	public EsquadriaCorrer(int quantidade, double largura, double altura, double marco, boolean soleiraEmbutida, boolean guarnicaoExterna, boolean tela) {
+		this.quantidade = quantidade;
 		this.largura = largura;
 		this.altura = altura;
 		this.marco = marco;
@@ -21,6 +23,14 @@ public class EsquadriaCorrer {
 		this.tela = tela;
 	}
 
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	
 	public double getLargura() {
 		return largura;
 	}
@@ -68,7 +78,7 @@ public class EsquadriaCorrer {
 	}
 	
 	public double largura2Folhas() {
-		double larguraFolha = ((largura-larguraMontanteCorrer())/2)+(larguraMontanteCorrer()/2);
+		double larguraFolha = ((largura-folgaLarguraFolhaMarco)/2)+(larguraMontanteCorrer()/2);
 		return larguraFolha;
 	}
 	
@@ -82,6 +92,7 @@ public class EsquadriaCorrer {
 	
 	final double folgaSuperior = 1.8;
 	final double folgaInferior = 0.3;
+	final double folgaLarguraFolhaMarco = 8;
 	final double espessuraMarco = 3.1;
 	final double espessuraGuarnicao = 1.4;
 	final double larguraGuarnicao = 6.5;
