@@ -14,6 +14,10 @@ public class ProgramTeste {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
+		double marco;
+		boolean telaTeste = false;
+		boolean soleiraTeste = false;
+		boolean guarnicaoTeste = false;
 		
 		System.out.print("Largura (cm): ");
 		double largura = sc.nextDouble();
@@ -21,22 +25,35 @@ public class ProgramTeste {
 		double altura = sc.nextDouble();
 		
 		System.out.print("Com tela mosquiteira (S/N): ");
-		String tela = sc.next();
-		boolean telaTeste=false;
-		double marco=0;
+		char tela = sc.next().charAt(0);
+		if(tela == 's' || tela == 'S') {
+			telaTeste = true;
+			System.out.print("Marco (cm): ");
+			marco = sc.nextDouble();
+			if(marco < Correr2F.getMarcoMinimoTela()) {
+				System.out.println("Marco mínimo com tela é de " + Correr2F.getMarcoMinimoTela()+"cm, o preenchimento será automático.");
+				marco = Correr2F.getMarcoMinimoTela();
+			}
+		}
+		else {
+			System.out.print("Marco (cm): ");
+			marco = sc.nextDouble();
+			if(marco < Correr2F.getMarcoMinimo()) {
+				System.out.println("Marco mínimo é de "+Correr2F.getMarcoMinimo()+"cm, o preenchimento será automático.");
+				marco = Correr2F.getMarcoMinimo();
+			}
+		}
 		
 		System.out.print("Lado ativa: ");
 		String ativa = sc.next();
 		System.out.print("Soleira embutida (S/N): ");
-		String soleira = sc.next();
-		boolean soleiraTeste = false;
-		if(soleira == "S" || soleira == "s") {
+		char soleira = sc.next().charAt(0);
+		if(soleira == 'S' || soleira == 's') {
 			soleiraTeste = true;
 		}
 		System.out.print("Guarnição para dois lados (S/N): ");
-		String guarnicao = sc.next();
-		boolean guarnicaoTeste = false;
-		if(guarnicao == "S" || guarnicao == "s") {
+		char guarnicao = sc.next().charAt(0);
+		if(guarnicao == 'S' || guarnicao == 's') {
 			guarnicaoTeste = true;
 		}
 
@@ -46,14 +63,4 @@ public class ProgramTeste {
 		System.out.print(e1.correr2F());		
 		sc.close();
 	}
-	
-	/*public static double marcoMinimo(boolean tela) {
-		if(tela) {
-			return getMarcoMinimo() + Correr2F.getAdicionalMarcoTela1F();
-		}
-		else {
-			return Correr2F.getMarcoMinimo();
-		}
-	}*/
-
 }

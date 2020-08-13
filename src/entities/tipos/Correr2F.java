@@ -5,8 +5,6 @@ import entities.EsquadriaCorrer;
 public class Correr2F extends EsquadriaCorrer {
 	
 	private String ladoAtiva;
-	private double marcoMinimo;
-	private double marcoMinimoTela;
 	
 	public Correr2F() {
 	}
@@ -16,10 +14,9 @@ public class Correr2F extends EsquadriaCorrer {
 		this.ladoAtiva = ladoAtiva;
 	}
 
-	public double getMarcoMinimo() {return marcoMinimo;}
+	public static double getMarcoMinimo() {return 11;}
 	
-	public double getMarcoMinimoTela() {return getAdicionalMarcoTela1F();
-	}
+	public static double getMarcoMinimoTela() {return 16;}
 
 	public String getLadoAtiva() {
 		return ladoAtiva;
@@ -35,7 +32,7 @@ public class Correr2F extends EsquadriaCorrer {
 	public String correr2F() {
 		return  "Medidas: " + largura + " x " + altura + " - Marco: "+ marco + " - Lado Ativa: "+ ladoAtiva
 				+ "\nFolhas: " + largura2Folhas() + " x " + alturaFolha()
-				+ "\n"+marcoMinimoTela;
+				;
 	}
 
 }

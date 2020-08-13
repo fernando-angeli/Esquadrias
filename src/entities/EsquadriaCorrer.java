@@ -88,13 +88,11 @@ public class EsquadriaCorrer {
 	final double espessuraFilete = 0.8;
 	final double larguraFilete = 2.5;
 	final double espessuraMontanteCorrer = 4.2;
-	final double adicionalMarcoTela1F = 5;
 
 	public double getEspessuraGuarnicao() {return espessuraGuarnicao;}
 	public double getLarguraGuarnicao() {return larguraGuarnicao;}
 	public double getEspessuraFilete() {return espessuraFilete;}
 	public double getLarguraFilete() {return larguraFilete;}
 	public double getEspessuraMontanteCorrer() {return espessuraMontanteCorrer;}
-	public double getAdicionalMarcoTela1F() {return adicionalMarcoTela1F;}
 	
 }
