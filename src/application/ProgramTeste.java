@@ -69,5 +69,6 @@ public class ProgramTeste {
 			System.out.print(e1.correr2FcomTela());
 		}	
 		sc.close();
+		//teste
 	}
 }
